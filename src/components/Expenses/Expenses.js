@@ -4,6 +4,9 @@ import Card from '../UI/Card';
 import ExpenseItem from './ExpenseItem';
 
 function Expenses(props){
+    function forma2(){
+        console.log('forma 2');
+    }
 
     return(
         // chamando o container que criamos
@@ -12,6 +15,9 @@ function Expenses(props){
             <ExpenseItem title={ props.items[1].title } date={ props.items[1].date } amount={ props.items[1].amount}></ExpenseItem>
             <ExpenseItem title={ props.items[2].title } date={ props.items[2].date } amount={ props.items[2].amount}></ExpenseItem>
             <ExpenseItem title={ props.items[3].title } date={ props.items[3].date } amount={ props.items[3].amount}></ExpenseItem>
+        
+            <button onClick={ ()=>{ console.log('forma 1') }}>Clique para exibir o texto</button>
+            <button onClick={ forma2 }>Clique para exibir o texto</button>
         </Card>
     )
 };
