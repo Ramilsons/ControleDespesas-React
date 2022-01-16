@@ -24,9 +24,15 @@ function App() {
     },
   ];
 
+  // recebendo a nova despesa preenchida no EexpenseForm. O caminho todo é: ExpenseForm.js -> NewExpense.js -> App.js 
+  function addExpenseHandler(expense){
+    console.log('Dentro do App.js');
+    console.log(expense);
+  }
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );

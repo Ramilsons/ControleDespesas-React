@@ -2,17 +2,18 @@ import './NewExpense.css';
 
 import ExpenseForm from './ExpenseForm';
 
-function NewExpense(){
+function NewExpense(props){
 
     // recebendo o objeto que foi criado no componente filho no parametro
     function saveExpenseDataHandler(enteredExpenseDate){
-        const expensedDate = {
-            ...enteredExpenseDate,
+        const expensedData = {
+            ...enteredExpenseData,
             id: Math.random().toString() // adicionando um id junto ao objeto recebido
-        }
+        };
 
-        console.log(expensedDate);
-    }
+        // enviando todos o novo expenseData para o componente pai(App)
+        props.onAddExpense(expensedData);
+    };
 
     return(
         <div className='new-expense'>

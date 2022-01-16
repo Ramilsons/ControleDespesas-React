@@ -33,14 +33,14 @@ function ExpenseForm(props){
         // fazendo com que não ocorra o reload da página(comportamento padrão)
         event.preventDefault();
 
-        const expenseDate = {
+        const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
             date: new Date(enteredDate)
         };
 
         // acessando a função configurada no pai e passando os dados que o usuário preencheu no form
-        props.onSaveExpenseDate(expenseDate);
+        props.onSaveExpenseDate(expenseData);
 
         // limpando os campos para uma UX melhor
         setEnteredTitle('');
