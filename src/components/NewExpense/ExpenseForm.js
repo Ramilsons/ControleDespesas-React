@@ -40,7 +40,7 @@ function ExpenseForm(props){
         };
 
         // acessando a função configurada no pai e passando os dados que o usuário preencheu no form
-        props.onSaveExpenseDate(expenseData);
+        props.onSaveExpenseData(expenseData);
 
         // limpando os campos para uma UX melhor
         setEnteredTitle('');

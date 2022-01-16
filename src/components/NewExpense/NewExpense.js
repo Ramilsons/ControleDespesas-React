@@ -5,7 +5,7 @@ import ExpenseForm from './ExpenseForm';
 function NewExpense(props){
 
     // recebendo o objeto que foi criado no componente filho no parametro
-    function saveExpenseDataHandler(enteredExpenseDate){
+    function saveExpenseDataHandler(enteredExpenseData){
         const expensedData = {
             ...enteredExpenseData,
             id: Math.random().toString() // adicionando um id junto ao objeto recebido
@@ -17,8 +17,8 @@ function NewExpense(props){
 
     return(
         <div className='new-expense'>
-            { /* Abaixo criamos um listener personalizado, ele será o responsavel por fazer a comunição dos dados do filho para o pai */ }
-            <ExpenseForm onSaveExpenseDate={saveExpenseDataHandler} />
+            { /* Abaixo criamos uma props personalizada, ela será a responsavel por fazer a comunição dos dados do filho para o pai */ }
+            <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
         </div>
     )
 }
