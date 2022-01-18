@@ -10,18 +10,13 @@ function Expenses(props){
     const [yearFilter, setYearFilter] = useState('2022');
 
     function yearChangeHandler(yearSelected){
-        console.log('Dentro do Expenses');
-        console.log(yearSelected);
         setYearFilter(yearSelected)
     }
 
     return(     
         <Card className="expenses">
             <ExpensesFilter selected={yearFilter} onYearChange={ yearChangeHandler }/>
-            <ExpenseItem title={ props.items[0].title } date={ props.items[0].date } amount={ props.items[0].amount}></ExpenseItem>
-            <ExpenseItem title={ props.items[1].title } date={ props.items[1].date } amount={ props.items[1].amount}></ExpenseItem>
-            <ExpenseItem title={ props.items[2].title } date={ props.items[2].date } amount={ props.items[2].amount}></ExpenseItem>
-            <ExpenseItem title={ props.items[3].title } date={ props.items[3].date } amount={ props.items[3].amount}></ExpenseItem>
+            {props.items.map(expense => <ExpenseItem title={expense.title} date={expense.date} amount={expense.amount} /> )}
         </Card>
     )
 };
