@@ -15,7 +15,7 @@ function Expenses(props){
     }
 
     let allExpensesFiltered = props.items.filter(expense => expense.date.getFullYear().toString() === yearFilter);
-
+  
     return(     
         <Card className="expenses">
             <ExpensesFilter selected={yearFilter} onYearChange={ yearChangeHandler }/>

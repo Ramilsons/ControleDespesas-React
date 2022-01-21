@@ -35,8 +35,8 @@ function ExpenseForm(props){
 
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
-            date: new Date(enteredDate)
+            amount: +enteredAmount,
+            date: new Date(enteredDate+'T00:00:00')
         };
 
         // acessando a função configurada no pai e passando os dados que o usuário preencheu no form

@@ -5,9 +5,8 @@ function ChartBar(props){
 
   if(props.total > 0){
     fillPercent = (props.fill / props.total) * 100 + '%';
-  }
-  console.log(fillPercent);
-
+  } 
+  
   return(
     <div className='chart-bar'>
       <div className='chart-bar__inner'>
